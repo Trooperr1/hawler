@@ -263,11 +263,11 @@ function initROICalculator() {
       // Color code the result
       if (roiValue) {
         if (roi >= 100) {
-          roiValue.style.color = '#000';
+          roiValue.style.color = '#ffffff';
         } else if (roi >= 50) {
-          roiValue.style.color = '#333';
+          roiValue.style.color = '#cccccc';
         } else {
-          roiValue.style.color = '#666';
+          roiValue.style.color = '#999999';
         }
       }
     }
