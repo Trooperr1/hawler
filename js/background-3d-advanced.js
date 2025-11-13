@@ -23,24 +23,55 @@
   let windowHalfY = window.innerHeight / 2;
   let container;
   let animationId;
+  let initialized = false;
 
   // Configuration
   const config = {
     particles: {
-      count: window.innerWidth > 768 ? 8000 : 2000,
-      size: 2.5,
-      spread: 1000
+      count: window.innerWidth > 768 ? 5000 : 1500,
+      size: 3,
+      spread: 800
     },
     shapes: {
-      count: window.innerWidth > 768 ? 5 : 2
+      count: window.innerWidth > 768 ? 3 : 1
     },
     camera: {
       fov: 75,
       near: 1,
       far: 3000,
-      posZ: 700
+      posZ: 600
     }
   };
+
+  // Show error message on page
+  function showError(message) {
+    console.error('❌ 3D Background Error:', message);
+
+    const errorDiv = document.createElement('div');
+    errorDiv.style.cssText = `
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 0, 0, 0.9);
+      color: white;
+      padding: 15px 20px;
+      border-radius: 5px;
+      font-family: monospace;
+      font-size: 14px;
+      z-index: 99999;
+      max-width: 400px;
+    `;
+    errorDiv.innerHTML = `<strong>3D Background Error:</strong><br>${message}`;
+    document.body.appendChild(errorDiv);
+
+    setTimeout(() => {
+      if (errorDiv.parentNode) {
+        errorDiv.style.opacity = '0';
+        errorDiv.style.transition = 'opacity 0.5s';
+        setTimeout(() => errorDiv.remove(), 500);
+      }
+    }, 5000);
+  }
 
   // Initialize Three.js scene
   function init() {
@@ -49,29 +80,46 @@
     try {
       // Check if THREE is available
       if (typeof THREE === 'undefined') {
-        console.error('❌ THREE is undefined - library not loaded');
+        const msg = 'THREE.js library not loaded. Please check your internet connection.';
+        console.error('❌', msg);
+        showError(msg);
         hideLoader();
         return false;
       }
 
       console.log('✅ THREE.js available, version:', THREE.REVISION);
 
+      // Test WebGL support
+      const canvas = document.createElement('canvas');
+      const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+      if (!gl) {
+        const msg = 'WebGL not supported by your browser.';
+        console.error('❌', msg);
+        showError(msg);
+        hideLoader();
+        return false;
+      }
+      console.log('✅ WebGL supported');
+
       // Create container
       container = document.createElement('div');
       container.id = 'threejs-background';
-      container.style.position = 'fixed';
-      container.style.top = '0';
-      container.style.left = '0';
-      container.style.width = '100%';
-      container.style.height = '100%';
-      container.style.zIndex = '0';
-      container.style.pointerEvents = 'none';
+      container.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        background: #000000;
+        pointer-events: none;
+      `;
       document.body.insertBefore(container, document.body.firstChild);
-      console.log('✅ Container created');
+      console.log('✅ Container created and inserted');
 
       // Create scene
       scene = new THREE.Scene();
-      scene.fog = new THREE.FogExp2(0x000000, 0.0007);
+      scene.fog = new THREE.FogExp2(0x000000, 0.0008);
       console.log('✅ Scene created');
 
       // Create camera
@@ -86,24 +134,30 @@
 
       // Create renderer
       renderer = new THREE.WebGLRenderer({
-        antialias: true,
-        alpha: false
+        antialias: window.innerWidth > 768,
+        alpha: false,
+        powerPreference: 'high-performance'
       });
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-      renderer.setClearColor(0x000000);
+      renderer.setClearColor(0x000000, 1);
       container.appendChild(renderer.domElement);
-      console.log('✅ Renderer created and added to container');
+      console.log('✅ Renderer created and canvas added');
+
+      // Verify renderer element is visible
+      const canvas2 = renderer.domElement;
+      console.log('Canvas dimensions:', canvas2.width, 'x', canvas2.height);
+      console.log('Canvas in DOM:', document.body.contains(canvas2));
 
       // Add lighting
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
       scene.add(ambientLight);
 
-      const pointLight1 = new THREE.PointLight(0xffffff, 1, 2000);
+      const pointLight1 = new THREE.PointLight(0xffffff, 1.2, 2000);
       pointLight1.position.set(500, 500, 500);
       scene.add(pointLight1);
 
-      const pointLight2 = new THREE.PointLight(0x6666ff, 0.7, 2000);
+      const pointLight2 = new THREE.PointLight(0x6666ff, 0.8, 2000);
       pointLight2.position.set(-500, -500, -500);
       scene.add(pointLight2);
       console.log('✅ Lights added');
@@ -115,19 +169,47 @@
       createStars();
 
       // Event listeners
-      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mousemove', onMouseMove, { passive: true });
       window.addEventListener('resize', onResize);
+
+      // Mark as initialized
+      initialized = true;
 
       // Hide loader and start
       hideLoader();
       animate();
 
       console.log('✨ 3D Background initialized successfully!');
+
+      // Show success message
+      const successDiv = document.createElement('div');
+      successDiv.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(0, 255, 0, 0.9);
+        color: black;
+        padding: 15px 20px;
+        border-radius: 5px;
+        font-family: monospace;
+        font-size: 14px;
+        z-index: 99999;
+        font-weight: bold;
+      `;
+      successDiv.textContent = '✅ 3D Background Active';
+      document.body.appendChild(successDiv);
+      setTimeout(() => {
+        successDiv.style.opacity = '0';
+        successDiv.style.transition = 'opacity 0.5s';
+        setTimeout(() => successDiv.remove(), 500);
+      }, 3000);
+
       return true;
 
     } catch (error) {
       console.error('❌ Error in init():', error);
       console.error('Error stack:', error.stack);
+      showError(`Initialization failed: ${error.message}`);
       hideLoader();
       return false;
     }
@@ -141,20 +223,23 @@
       const colors = [];
 
       for (let i = 0; i < config.particles.count; i++) {
-        // Spiral galaxy
+        // Spiral galaxy pattern
         const radius = Math.random() * config.particles.spread;
         const angle = Math.random() * Math.PI * 2;
         const spiral = angle + radius * 0.01;
 
         const x = Math.cos(spiral) * radius + (Math.random() - 0.5) * 100;
-        const y = (Math.random() - 0.5) * 250;
+        const y = (Math.random() - 0.5) * 300;
         const z = Math.sin(spiral) * radius + (Math.random() - 0.5) * 100;
 
         positions.push(x, y, z);
 
-        // Color
+        // Color gradient from white to light blue
         const color = new THREE.Color();
-        color.setHSL(0.6, 0.2, 0.8 + Math.random() * 0.2);
+        const hue = 0.6 + Math.random() * 0.1;
+        const saturation = 0.1 + Math.random() * 0.2;
+        const lightness = 0.7 + Math.random() * 0.3;
+        color.setHSL(hue, saturation, lightness);
         colors.push(color.r, color.g, color.b);
       }
 
@@ -165,9 +250,10 @@
         size: config.particles.size,
         vertexColors: true,
         transparent: true,
-        opacity: 0.8,
+        opacity: 0.9,
         blending: THREE.AdditiveBlending,
-        depthWrite: false
+        depthWrite: false,
+        sizeAttenuation: true
       });
 
       particleSystem = new THREE.Points(geometry, material);
@@ -175,6 +261,7 @@
       console.log('✅ Particles created:', config.particles.count);
     } catch (error) {
       console.error('❌ Error creating particles:', error);
+      showError(`Particle creation failed: ${error.message}`);
     }
   }
 
@@ -182,39 +269,38 @@
   function createShapes() {
     try {
       const geometries = [
-        new THREE.SphereGeometry(50, 32, 32),
-        new THREE.TorusGeometry(40, 15, 16, 100),
-        new THREE.OctahedronGeometry(50),
-        new THREE.TetrahedronGeometry(50),
-        new THREE.IcosahedronGeometry(45)
+        new THREE.OctahedronGeometry(60, 0),
+        new THREE.TorusGeometry(50, 20, 16, 100),
+        new THREE.IcosahedronGeometry(55, 0)
       ];
 
       const material = new THREE.MeshPhongMaterial({
         color: 0xffffff,
         wireframe: true,
         transparent: true,
-        opacity: 0.12,
-        side: THREE.DoubleSide
+        opacity: 0.15,
+        side: THREE.DoubleSide,
+        shininess: 100
       });
 
       for (let i = 0; i < config.shapes.count; i++) {
         const mesh = new THREE.Mesh(geometries[i % geometries.length], material.clone());
 
-        mesh.position.x = (Math.random() - 0.5) * 1500;
-        mesh.position.y = (Math.random() - 0.5) * 800;
-        mesh.position.z = (Math.random() - 0.5) * 800 - 300;
+        mesh.position.x = (Math.random() - 0.5) * 1200;
+        mesh.position.y = (Math.random() - 0.5) * 600;
+        mesh.position.z = (Math.random() - 0.5) * 600 - 200;
 
         mesh.rotation.x = Math.random() * Math.PI;
         mesh.rotation.y = Math.random() * Math.PI;
 
-        const scale = 0.7 + Math.random();
+        const scale = 0.8 + Math.random() * 0.6;
         mesh.scale.set(scale, scale, scale);
 
         mesh.userData = {
-          rotX: (Math.random() - 0.5) * 0.01,
-          rotY: (Math.random() - 0.5) * 0.01,
-          rotZ: (Math.random() - 0.5) * 0.01,
-          floatSpeed: 0.0005 + Math.random() * 0.001,
+          rotX: (Math.random() - 0.5) * 0.008,
+          rotY: (Math.random() - 0.5) * 0.008,
+          rotZ: (Math.random() - 0.5) * 0.008,
+          floatSpeed: 0.0003 + Math.random() * 0.0007,
           floatOffset: Math.random() * Math.PI * 2,
           initY: mesh.position.y
         };
@@ -225,24 +311,26 @@
       console.log('✅ Shapes created:', config.shapes.count);
     } catch (error) {
       console.error('❌ Error creating shapes:', error);
+      showError(`Shape creation failed: ${error.message}`);
     }
   }
 
   // Create wave mesh
   function createWave() {
     try {
-      const geometry = new THREE.PlaneGeometry(2500, 2500, 60, 60);
+      const geometry = new THREE.PlaneGeometry(2000, 2000, 50, 50);
       const material = new THREE.MeshPhongMaterial({
         color: 0xffffff,
         wireframe: true,
         transparent: true,
-        opacity: 0.05,
-        side: THREE.DoubleSide
+        opacity: 0.06,
+        side: THREE.DoubleSide,
+        shininess: 50
       });
 
       waveMesh = new THREE.Mesh(geometry, material);
       waveMesh.rotation.x = -Math.PI / 2;
-      waveMesh.position.y = -400;
+      waveMesh.position.y = -350;
       scene.add(waveMesh);
 
       // Store original Z positions
@@ -254,6 +342,7 @@
       console.log('✅ Wave created');
     } catch (error) {
       console.error('❌ Error creating wave:', error);
+      showError(`Wave creation failed: ${error.message}`);
     }
   }
 
@@ -264,13 +353,13 @@
       const positions = [];
       const colors = [];
 
-      for (let i = 0; i < 1500; i++) {
-        const x = (Math.random() - 0.5) * 3000;
-        const y = (Math.random() - 0.5) * 3000;
-        const z = (Math.random() - 0.5) * 3000;
+      for (let i = 0; i < 2000; i++) {
+        const x = (Math.random() - 0.5) * 2500;
+        const y = (Math.random() - 0.5) * 2500;
+        const z = (Math.random() - 0.5) * 2500;
         positions.push(x, y, z);
 
-        const brightness = 0.7 + Math.random() * 0.3;
+        const brightness = 0.6 + Math.random() * 0.4;
         colors.push(brightness, brightness, brightness);
       }
 
@@ -281,21 +370,22 @@
         size: 2,
         vertexColors: true,
         transparent: true,
-        opacity: 0.6
+        opacity: 0.7
       });
 
       starfield = new THREE.Points(geometry, material);
       scene.add(starfield);
-      console.log('✅ Stars created');
+      console.log('✅ Stars created: 2000');
     } catch (error) {
       console.error('❌ Error creating stars:', error);
+      showError(`Star creation failed: ${error.message}`);
     }
   }
 
   // Mouse handler
   function onMouseMove(event) {
-    mouseX = (event.clientX - windowHalfX) * 0.3;
-    mouseY = (event.clientY - windowHalfY) * 0.3;
+    mouseX = (event.clientX - windowHalfX) * 0.2;
+    mouseY = (event.clientY - windowHalfY) * 0.2;
   }
 
   // Resize handler
@@ -312,15 +402,17 @@
 
   // Animation loop
   function animate() {
+    if (!initialized) return;
+
     animationId = requestAnimationFrame(animate);
 
     try {
-      time += 0.01;
+      time += 0.008;
 
       // Rotate particles
       if (particleSystem) {
-        particleSystem.rotation.y += 0.0005;
-        particleSystem.rotation.x = Math.sin(time * 0.0005) * 0.1;
+        particleSystem.rotation.y += 0.0003;
+        particleSystem.rotation.x = Math.sin(time * 0.0003) * 0.08;
       }
 
       // Animate shapes
@@ -329,7 +421,7 @@
         shape.rotation.y += shape.userData.rotY;
         shape.rotation.z += shape.userData.rotZ;
         shape.position.y = shape.userData.initY +
-          Math.sin(time * shape.userData.floatSpeed + shape.userData.floatOffset) * 40;
+          Math.sin(time * shape.userData.floatSpeed + shape.userData.floatOffset) * 30;
       });
 
       // Animate wave
@@ -340,27 +432,28 @@
         for (let i = 0; i < positions.count; i++) {
           const x = positions.getX(i);
           const y = positions.getY(i);
-          const wave = Math.sin(x * 0.01 + time * 0.5) * 12 +
-                      Math.cos(y * 0.01 + time * 0.5) * 12;
+          const wave = Math.sin(x * 0.008 + time * 0.4) * 10 +
+                      Math.cos(y * 0.008 + time * 0.4) * 10;
           positions.setZ(i, originalZ[i] + wave);
         }
         positions.needsUpdate = true;
       }
 
-      // Camera follow mouse
+      // Camera follow mouse with smooth damping
       if (camera) {
-        camera.position.x += (mouseX - camera.position.x) * 0.05;
-        camera.position.y += (-mouseY - camera.position.y) * 0.05;
+        camera.position.x += (mouseX - camera.position.x) * 0.03;
+        camera.position.y += (-mouseY - camera.position.y) * 0.03;
         camera.lookAt(scene.position);
       }
 
-      // Render
+      // Render scene
       if (renderer && scene && camera) {
         renderer.render(scene, camera);
       }
 
     } catch (error) {
       console.error('❌ Error in animate():', error);
+      showError(`Animation error: ${error.message}`);
       cancelAnimationFrame(animationId);
     }
   }
@@ -371,6 +464,7 @@
     if (loader) {
       setTimeout(() => {
         loader.style.opacity = '0';
+        loader.style.transition = 'opacity 0.5s';
         setTimeout(() => {
           if (loader.parentNode) {
             loader.parentNode.removeChild(loader);
@@ -381,21 +475,58 @@
   }
 
   // Wait for Three.js and initialize
+  let attempts = 0;
+  const maxAttempts = 100; // 5 seconds
+
   function start() {
+    attempts++;
+
     if (typeof THREE !== 'undefined') {
       console.log('✅ THREE.js detected, starting initialization...');
       init();
-    } else {
-      console.log('⏳ Waiting for THREE.js...');
+    } else if (attempts < maxAttempts) {
+      console.log(`⏳ Waiting for THREE.js... (attempt ${attempts}/${maxAttempts})`);
       setTimeout(start, 50);
+    } else {
+      const msg = 'THREE.js failed to load after 5 seconds. Check your internet connection.';
+      console.error('❌', msg);
+      showError(msg);
+      hideLoader();
     }
   }
 
   // Start when DOM ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', start);
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('📄 DOM loaded, starting 3D background...');
+      setTimeout(start, 100);
+    });
   } else {
+    console.log('📄 DOM already loaded, starting 3D background...');
     setTimeout(start, 100);
   }
+
+  // Cleanup on page unload
+  window.addEventListener('beforeunload', () => {
+    if (animationId) cancelAnimationFrame(animationId);
+    if (renderer) {
+      renderer.dispose();
+      if (renderer.domElement && renderer.domElement.parentNode) {
+        renderer.domElement.parentNode.removeChild(renderer.domElement);
+      }
+    }
+    if (scene) {
+      scene.traverse(object => {
+        if (object.geometry) object.geometry.dispose();
+        if (object.material) {
+          if (Array.isArray(object.material)) {
+            object.material.forEach(material => material.dispose());
+          } else {
+            object.material.dispose();
+          }
+        }
+      });
+    }
+  });
 
 })();
