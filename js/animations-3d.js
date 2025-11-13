@@ -304,7 +304,7 @@ function initCanvasParticles() {
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0, 0, 0, ${this.opacity})`;
+      ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
       ctx.fill();
     }
   }
@@ -334,7 +334,7 @@ function initCanvasParticles() {
           ctx.beginPath();
           ctx.moveTo(p1.x, p1.y);
           ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = `rgba(0, 0, 0, ${0.1 * (1 - distance / 150)})`;
+          ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 * (1 - distance / 150)})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -409,7 +409,7 @@ function init3DRotatingCube() {
 
       function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.strokeStyle = 'rgba(0, 0, 0, 0.3)';
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
         ctx.lineWidth = 2;
 
         const rotatedVertices = vertices.map(v => {
