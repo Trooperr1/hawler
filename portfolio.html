@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View our portfolio of stunning web design and development projects">
+  <title>Portfolio | JAFFSTUDIO</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="loader-wrapper">
+    <div class="loader"></div>
+    <div class="loader-text">JAFFSTUDIO</div>
+  </div>
+
+  <div class="scroll-progress"></div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">JAFFSTUDIO</a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Services</a>
+          <ul class="dropdown-menu">
+            <li><a href="service-web-design.html" class="dropdown-link">Web Design</a></li>
+            <li><a href="service-web-development.html" class="dropdown-link">Web Development</a></li>
+            <li><a href="service-branding.html" class="dropdown-link">Branding</a></li>
+            <li><a href="service-digital-marketing.html" class="dropdown-link">Digital Marketing</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <div class="breadcrumbs">
+    <ul class="breadcrumb-list">
+      <li class="breadcrumb-item"><a href="index.html" class="breadcrumb-link">Home</a></li>
+      <li class="breadcrumb-item">Portfolio</li>
+    </ul>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title fade-in">Our Portfolio</h1>
+        <p class="section-subtitle fade-in">
+          Explore our collection of successful projects across various industries
+        </p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="web-design">Web Design</button>
+        <button class="filter-btn" data-filter="web-development">Web Development</button>
+        <button class="filter-btn" data-filter="branding">Branding</button>
+        <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+        <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div class="grid grid-3">
+        <!-- Project 1 -->
+        <article class="card fade-in" data-category="ecommerce" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/portfolio-1.jpg" alt="Luxury E-commerce Platform" loading="lazy" data-lightbox>
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">E-commerce</span>
+              <span class="badge">UI/UX</span>
+            </div>
+            <h3 class="card-title">Luxury E-commerce Platform</h3>
+            <p class="card-text">
+              A premium online shopping experience with custom animations and seamless checkout.
+            </p>
+            <a href="portfolio-detail.html" class="card-link">View Project</a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card fade-in" data-category="web-design" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/portfolio-2.jpg" alt="Corporate Website" loading="lazy" data-lightbox>
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Corporate</span>
+              <span class="badge">Redesign</span>
+            </div>
+            <h3 class="card-title">Corporate Website Redesign</h3>
+            <p class="card-text">
+              Modern design with improved UX and conversion-optimized landing pages.
+            </p>
+            <a href="portfolio-detail.html" class="card-link">View Project</a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card fade-in" data-category="mobile" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/portfolio-3.jpg" alt="Fitness Mobile App" loading="lazy" data-lightbox>
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Mobile</span>
+              <span class="badge">React Native</span>
+            </div>
+            <h3 class="card-title">Fitness Mobile Application</h3>
+            <p class="card-text">
+              Native app with real-time tracking and AI-powered workout recommendations.
+            </p>
+            <a href="portfolio-detail.html" class="card-link">View Project</a>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="card fade-in" data-category="branding" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/portfolio-4.jpg" alt="Brand Identity" loading="lazy" data-lightbox>
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Branding</span>
+              <span class="badge">Identity</span>
+            </div>
+            <h3 class="card-title">Complete Brand Identity</h3>
+            <p class="card-text">
+              Comprehensive branding package including logo, guidelines, and collateral.
+            </p>
+            <a href="portfolio-detail.html" class="card-link">View Project</a>
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="card fade-in" data-category="web-development" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/portfolio-5.jpg" alt="SaaS Platform" loading="lazy" data-lightbox>
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">SaaS</span>
+              <span class="badge">Development</span>
+            </div>
+            <h3 class="card-title">SaaS Platform Development</h3>
+            <p class="card-text">
+              Scalable cloud-based platform with advanced analytics and integrations.
+            </p>
+            <a href="portfolio-detail.html" class="card-link">View Project</a>
+          </div>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="card fade-in" data-category="web-design" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/portfolio-6.jpg" alt="Restaurant Website" loading="lazy" data-lightbox>
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Restaurant</span>
+              <span class="badge">Booking</span>
+            </div>
+            <h3 class="card-title">Fine Dining Restaurant</h3>
+            <p class="card-text">
+              Elegant website with online reservation system and menu showcase.
+            </p>
+            <a href="portfolio-detail.html" class="card-link">View Project</a>
+          </div>
+        </article>
+
+        <!-- Project 7 -->
+        <article class="card fade-in" data-category="ecommerce" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/portfolio-7.jpg" alt="Fashion Store" loading="lazy" data-lightbox>
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Fashion</span>
+              <span class="badge">E-commerce</span>
+            </div>
+            <h3 class="card-title">Fashion E-commerce Store</h3>
+            <p class="card-text">
+              Trendy online store with AR try-on feature and social shopping integration.
+            </p>
+            <a href="portfolio-detail.html" class="card-link">View Project</a>
+          </div>
+        </article>
+
+        <!-- Project 8 -->
+        <article class="card fade-in" data-category="branding" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/portfolio-8.jpg" alt="Startup Branding" loading="lazy" data-lightbox>
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Startup</span>
+              <span class="badge">Logo</span>
+            </div>
+            <h3 class="card-title">Tech Startup Branding</h3>
+            <p class="card-text">
+              Modern brand identity for innovative tech startup with full guidelines.
+            </p>
+            <a href="portfolio-detail.html" class="card-link">View Project</a>
+          </div>
+        </article>
+
+        <!-- Project 9 -->
+        <article class="card fade-in" data-category="web-development" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/portfolio-9.jpg" alt="Real Estate Portal" loading="lazy" data-lightbox>
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Real Estate</span>
+              <span class="badge">Portal</span>
+            </div>
+            <h3 class="card-title">Real Estate Portal</h3>
+            <p class="card-text">
+              Property listing platform with advanced search and virtual tours.
+            </p>
+            <a href="portfolio-detail.html" class="card-link">View Project</a>
+          </div>
+        </article>
+
+        <!-- Project 10 -->
+        <article class="card fade-in" data-category="mobile" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/portfolio-10.jpg" alt="Delivery App" loading="lazy" data-lightbox>
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Delivery</span>
+              <span class="badge">iOS/Android</span>
+            </div>
+            <h3 class="card-title">Food Delivery App</h3>
+            <p class="card-text">
+              User-friendly app with real-time tracking and smart recommendations.
+            </p>
+            <a href="portfolio-detail.html" class="card-link">View Project</a>
+          </div>
+        </article>
+
+        <!-- Project 11 -->
+        <article class="card fade-in" data-category="web-design" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/portfolio-11.jpg" alt="Portfolio Website" loading="lazy" data-lightbox>
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Portfolio</span>
+              <span class="badge">Creative</span>
+            </div>
+            <h3 class="card-title">Creative Portfolio Site</h3>
+            <p class="card-text">
+              Stunning portfolio website for photographer with immersive galleries.
+            </p>
+            <a href="portfolio-detail.html" class="card-link">View Project</a>
+          </div>
+        </article>
+
+        <!-- Project 12 -->
+        <article class="card fade-in" data-category="web-development" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/portfolio-12.jpg" alt="Learning Platform" loading="lazy" data-lightbox>
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Education</span>
+              <span class="badge">LMS</span>
+            </div>
+            <h3 class="card-title">E-learning Platform</h3>
+            <p class="card-text">
+              Comprehensive learning management system with video courses and quizzes.
+            </p>
+            <a href="portfolio-detail.html" class="card-link">View Project</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background: var(--color-black); color: var(--color-white);">
+    <div class="container text-center">
+      <h2 class="section-title" style="color: var(--color-white);">Want to See Your Project Here?</h2>
+      <p class="section-subtitle" style="color: var(--color-gray-light); max-width: 700px; margin: 0 auto var(--spacing-md);">
+        Let's collaborate to create something extraordinary together
+      </p>
+      <a href="contact.html" class="btn btn-white">Start Your Project</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>JAFFSTUDIO</h3>
+          <p style="color: var(--color-gray-light); margin-bottom: var(--spacing-sm);">
+            Crafting exceptional digital experiences through innovative design and development.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Services</h3>
+          <div class="footer-links">
+            <a href="service-web-design.html" class="footer-link">Web Design</a>
+            <a href="service-web-development.html" class="footer-link">Web Development</a>
+            <a href="service-branding.html" class="footer-link">Branding</a>
+            <a href="service-digital-marketing.html" class="footer-link">Digital Marketing</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Company</h3>
+          <div class="footer-links">
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="portfolio.html" class="footer-link">Portfolio</a>
+            <a href="blog.html" class="footer-link">Blog</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <div class="footer-links">
+            <p style="color: var(--color-gray-light);"><i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>hello@jaffstudio.com</p>
+            <p style="color: var(--color-gray-light);"><i class="fas fa-phone" style="margin-right: 0.5rem;"></i><a href="tel:+15551234567" style="color: inherit;">+1 (555) 123-4567</a></p>
+            <p style="color: var(--color-gray-light);"><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>123 Design Street, Creative City</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 JAFFSTUDIO. All rights reserved. | <a href="privacy.html" class="footer-link">Privacy Policy</a> | <a href="terms.html" class="footer-link">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+  <a href="#" class="whatsapp-float" data-phone="15551234567" data-message="Hello! I'd like to discuss a project." aria-label="Contact via WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

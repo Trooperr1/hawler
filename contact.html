@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with JAFFSTUDIO - Let's create something amazing together">
+  <title>Contact Us | JAFFSTUDIO</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="loader-wrapper">
+    <div class="loader"></div>
+    <div class="loader-text">JAFFSTUDIO</div>
+  </div>
+
+  <div class="scroll-progress"></div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">JAFFSTUDIO</a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Services</a>
+          <ul class="dropdown-menu">
+            <li><a href="service-web-design.html" class="dropdown-link">Web Design</a></li>
+            <li><a href="service-web-development.html" class="dropdown-link">Web Development</a></li>
+            <li><a href="service-branding.html" class="dropdown-link">Branding</a></li>
+            <li><a href="service-digital-marketing.html" class="dropdown-link">Digital Marketing</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <div class="breadcrumbs">
+    <ul class="breadcrumb-list">
+      <li class="breadcrumb-item"><a href="index.html" class="breadcrumb-link">Home</a></li>
+      <li class="breadcrumb-item">Contact</li>
+    </ul>
+  </div>
+
+  <section class="section" style="padding-top: calc(80px + var(--spacing-md));">
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title fade-in">Get In Touch</h1>
+        <p class="section-subtitle fade-in">
+          We'd love to hear from you. Let's start a conversation about your next project.
+        </p>
+      </div>
+
+      <div class="grid grid-2" style="gap: var(--spacing-lg); align-items: start;">
+        <!-- Contact Form -->
+        <div class="card fade-in" style="padding: var(--spacing-lg);">
+          <h2 style="margin-bottom: var(--spacing-md);">Send us a Message</h2>
+          <form data-validate>
+            <div class="form-group">
+              <label class="form-label">Your Name *</label>
+              <input type="text" class="form-input" required placeholder="John Doe">
+              <span class="form-error">Please enter your name</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Email Address *</label>
+              <input type="email" class="form-input" required placeholder="john@example.com">
+              <span class="form-error">Please enter a valid email</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-input" placeholder="+1 (555) 123-4567">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Subject *</label>
+              <select class="form-select" required>
+                <option value="">Select a subject</option>
+                <option>General Inquiry</option>
+                <option>Project Quote</option>
+                <option>Support Request</option>
+                <option>Partnership Opportunity</option>
+                <option>Other</option>
+              </select>
+              <span class="form-error">Please select a subject</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Message *</label>
+              <textarea class="form-textarea" required minlength="20" placeholder="Tell us about your project or inquiry..."></textarea>
+              <span class="form-error">Please provide a message (minimum 20 characters)</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Attach Files (Optional)</label>
+              <input type="file" class="form-input" multiple accept=".pdf,.doc,.docx,.jpg,.png">
+            </div>
+
+            <div class="form-group">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="consent" required>
+                <label for="consent">I agree to the <a href="privacy.html">Privacy Policy</a> and consent to be contacted</label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i>
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="fade-in">
+          <div class="card" style="padding: var(--spacing-lg); margin-bottom: var(--spacing-md);">
+            <h2 style="margin-bottom: var(--spacing-md);">Contact Information</h2>
+
+            <div style="margin-bottom: var(--spacing-md);">
+              <h3 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gray-medium); margin-bottom: 0.5rem;">
+                <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i> Address
+              </h3>
+              <p style="margin: 0;">123 Design Street<br>Creative City, CC 12345<br>United States</p>
+            </div>
+
+            <div style="margin-bottom: var(--spacing-md);">
+              <h3 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gray-medium); margin-bottom: 0.5rem;">
+                <i class="fas fa-phone" style="margin-right: 0.5rem;"></i> Phone
+              </h3>
+              <p style="margin: 0;"><a href="tel:+15551234567" style="color: inherit;">+1 (555) 123-4567</a></p>
+              <p style="margin: 0; color: var(--color-gray-medium); font-size: 0.9rem;">Mon-Fri: 9:00 AM - 6:00 PM EST</p>
+            </div>
+
+            <div style="margin-bottom: var(--spacing-md);">
+              <h3 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gray-medium); margin-bottom: 0.5rem;">
+                <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i> Email
+              </h3>
+              <p style="margin: 0;"><a href="mailto:hello@jaffstudio.com" style="color: inherit;">hello@jaffstudio.com</a></p>
+              <p style="margin: 0;"><a href="mailto:support@jaffstudio.com" style="color: inherit;">support@jaffstudio.com</a></p>
+            </div>
+
+            <div>
+              <h3 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gray-medium); margin-bottom: 0.5rem;">
+                <i class="fas fa-share-alt" style="margin-right: 0.5rem;"></i> Follow Us
+              </h3>
+              <div class="social-links" style="margin-top: var(--spacing-sm);">
+                <a href="#" class="social-link" style="background: var(--color-black); color: var(--color-white);" aria-label="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-link" style="background: var(--color-black); color: var(--color-white);" aria-label="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link" style="background: var(--color-black); color: var(--color-white);" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-link" style="background: var(--color-black); color: var(--color-white);" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding: var(--spacing-lg);">
+            <h3 style="margin-bottom: var(--spacing-sm);">Office Hours</h3>
+            <table style="width: 100%; color: var(--color-gray-medium);">
+              <tr style="border-bottom: 1px solid var(--color-gray-light);">
+                <td style="padding: 0.5rem 0;">Monday - Friday</td>
+                <td style="padding: 0.5rem 0; text-align: right;">9:00 AM - 6:00 PM</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-gray-light);">
+                <td style="padding: 0.5rem 0;">Saturday</td>
+                <td style="padding: 0.5rem 0; text-align: right;">10:00 AM - 4:00 PM</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.5rem 0;">Sunday</td>
+                <td style="padding: 0.5rem 0; text-align: right; color: #c00;">Closed</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Maps -->
+  <section class="section" style="padding: 0;">
+    <div class="fade-in" style="width: 100%; height: 450px; background: var(--color-gray-ultralight); position: relative;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2412648750455!2d-73.98823492346576!3d40.75889097138558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: var(--color-gray-ultralight);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+        <p class="section-subtitle fade-in">
+          Quick answers to common questions
+        </p>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <h3 class="accordion-title">What is your typical response time?</h3>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-body">
+              <p>We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call us directly.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <h3 class="accordion-title">Do you work with international clients?</h3>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-body">
+              <p>Yes! We work with clients worldwide and can accommodate different time zones for meetings and communication.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <h3 class="accordion-title">How do you handle project pricing?</h3>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-body">
+              <p>We provide custom quotes based on your specific requirements. Contact us with your project details for a detailed proposal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>JAFFSTUDIO</h3>
+          <p style="color: var(--color-gray-light); margin-bottom: var(--spacing-sm);">
+            Crafting exceptional digital experiences through innovative design and development.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Services</h3>
+          <div class="footer-links">
+            <a href="service-web-design.html" class="footer-link">Web Design</a>
+            <a href="service-web-development.html" class="footer-link">Web Development</a>
+            <a href="service-branding.html" class="footer-link">Branding</a>
+            <a href="service-digital-marketing.html" class="footer-link">Digital Marketing</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Company</h3>
+          <div class="footer-links">
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="portfolio.html" class="footer-link">Portfolio</a>
+            <a href="blog.html" class="footer-link">Blog</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <div class="footer-links">
+            <p style="color: var(--color-gray-light);"><i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>hello@jaffstudio.com</p>
+            <p style="color: var(--color-gray-light);"><i class="fas fa-phone" style="margin-right: 0.5rem;"></i><a href="tel:+15551234567" style="color: inherit;">+1 (555) 123-4567</a></p>
+            <p style="color: var(--color-gray-light);"><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>123 Design Street, Creative City</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 JAFFSTUDIO. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+  <a href="#" class="whatsapp-float" data-phone="15551234567" data-message="Hello! I'd like to get in touch." aria-label="Contact via WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

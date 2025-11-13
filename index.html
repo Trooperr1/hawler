@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JAFFSTUDIO - Premium Digital Design & Development Agency">
+  <title>JAFFSTUDIO - Premium Digital Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div class="loader-wrapper">
+    <div class="loader"></div>
+    <div class="loader-text">JAFFSTUDIO</div>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">JAFFSTUDIO</a>
+
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Services</a>
+          <ul class="dropdown-menu">
+            <li><a href="service-web-design.html" class="dropdown-link">Web Design</a></li>
+            <li><a href="service-web-development.html" class="dropdown-link">Web Development</a></li>
+            <li><a href="service-branding.html" class="dropdown-link">Branding</a></li>
+            <li><a href="service-digital-marketing.html" class="dropdown-link">Digital Marketing</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="portfolio.html" class="nav-link">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="blog.html" class="nav-link">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">Contact</a>
+        </li>
+      </ul>
+
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-background">
+      <div class="hero-pattern"></div>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">Crafting Digital Excellence</h1>
+      <p class="hero-subtitle">
+        We transform visions into exceptional digital experiences through
+        innovative design and cutting-edge development
+      </p>
+      <div class="hero-cta">
+        <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+        <a href="portfolio.html" class="btn btn-secondary">View Our Work</a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">Our Services</h2>
+        <p class="section-subtitle fade-in">
+          Comprehensive digital solutions tailored to elevate your brand
+        </p>
+      </div>
+
+      <div class="grid grid-4">
+        <div class="card service-card fade-in">
+          <div class="service-icon">
+            <i class="fas fa-palette"></i>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Web Design</h3>
+            <p class="card-text">
+              Stunning, user-centric designs that captivate and convert.
+              We create visual experiences that resonate with your audience.
+            </p>
+            <a href="service-web-design.html" class="card-link">Learn More</a>
+          </div>
+        </div>
+
+        <div class="card service-card fade-in">
+          <div class="service-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Web Development</h3>
+            <p class="card-text">
+              Robust, scalable solutions built with cutting-edge technologies.
+              From concept to deployment, we deliver excellence.
+            </p>
+            <a href="service-web-development.html" class="card-link">Learn More</a>
+          </div>
+        </div>
+
+        <div class="card service-card fade-in">
+          <div class="service-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Branding</h3>
+            <p class="card-text">
+              Comprehensive brand identity that tells your unique story.
+              We craft memorable brands that stand the test of time.
+            </p>
+            <a href="service-branding.html" class="card-link">Learn More</a>
+          </div>
+        </div>
+
+        <div class="card service-card fade-in">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Digital Marketing</h3>
+            <p class="card-text">
+              Strategic campaigns that drive growth and engagement.
+              We help your brand reach and resonate with the right audience.
+            </p>
+            <a href="service-digital-marketing.html" class="card-link">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Carousel -->
+  <section class="section" style="background: var(--color-gray-ultralight);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">Featured Work</h2>
+        <p class="section-subtitle fade-in">
+          A showcase of our most impactful projects
+        </p>
+      </div>
+
+      <div class="carousel" data-autoplay="true" data-interval="5000">
+        <div class="carousel-container">
+          <div class="carousel-slide active">
+            <div class="card">
+              <div class="card-image">
+                <img src="images/portfolio-1.jpg" alt="E-commerce Platform" loading="lazy">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Luxury E-commerce Platform</h3>
+                <p class="card-text">
+                  A premium online shopping experience featuring custom animations,
+                  seamless checkout, and personalized recommendations.
+                </p>
+                <div class="mb-sm">
+                  <span class="badge">E-commerce</span>
+                  <span class="badge">UI/UX</span>
+                  <span class="badge">Development</span>
+                </div>
+                <a href="portfolio-detail.html" class="card-link">View Project</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="card">
+              <div class="card-image">
+                <img src="images/portfolio-2.jpg" alt="Corporate Website" loading="lazy">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Corporate Website Redesign</h3>
+                <p class="card-text">
+                  Complete digital transformation with modern design, improved UX,
+                  and conversion-optimized landing pages.
+                </p>
+                <div class="mb-sm">
+                  <span class="badge">Corporate</span>
+                  <span class="badge">Redesign</span>
+                  <span class="badge">SEO</span>
+                </div>
+                <a href="portfolio-detail.html" class="card-link">View Project</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="card">
+              <div class="card-image">
+                <img src="images/portfolio-3.jpg" alt="Mobile App" loading="lazy">
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Fitness Mobile Application</h3>
+                <p class="card-text">
+                  Native iOS and Android app with real-time tracking, social features,
+                  and AI-powered workout recommendations.
+                </p>
+                <div class="mb-sm">
+                  <span class="badge">Mobile</span>
+                  <span class="badge">React Native</span>
+                  <span class="badge">AI</span>
+                </div>
+                <a href="portfolio-detail.html" class="card-link">View Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-btn prev" aria-label="Previous slide">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="carousel-btn next" aria-label="Next slide">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="carousel-indicators">
+          <span class="carousel-indicator active"></span>
+          <span class="carousel-indicator"></span>
+          <span class="carousel-indicator"></span>
+        </div>
+      </div>
+
+      <div class="text-center mt-lg">
+        <a href="portfolio.html" class="btn btn-secondary">View All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Counter -->
+  <section class="section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item fade-in">
+          <div class="stat-number" data-count="250">0</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-item fade-in">
+          <div class="stat-number" data-count="150">0</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-item fade-in">
+          <div class="stat-number" data-count="15">0</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item fade-in">
+          <div class="stat-number" data-count="50">0</div>
+          <div class="stat-label">Awards Won</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section" style="background: var(--color-gray-ultralight);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">Client Testimonials</h2>
+        <p class="section-subtitle fade-in">
+          What our clients say about working with us
+        </p>
+      </div>
+
+      <div class="carousel" data-autoplay="true" data-interval="6000">
+        <div class="carousel-container">
+          <div class="carousel-slide active">
+            <div class="testimonial-slide">
+              <p class="testimonial-text">
+                "JAFFSTUDIO transformed our online presence completely. Their attention
+                to detail and commitment to excellence is unmatched. Highly recommended!"
+              </p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">
+                  <img src="images/client-1.jpg" alt="Sarah Johnson" loading="lazy">
+                </div>
+                <div class="testimonial-info">
+                  <h4>Sarah Johnson</h4>
+                  <p>CEO, TechCorp Inc.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="testimonial-slide">
+              <p class="testimonial-text">
+                "Working with JAFFSTUDIO was a game-changer for our business. They delivered
+                beyond our expectations and the results speak for themselves."
+              </p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">
+                  <img src="images/client-2.jpg" alt="Michael Chen" loading="lazy">
+                </div>
+                <div class="testimonial-info">
+                  <h4>Michael Chen</h4>
+                  <p>Founder, StartupHub</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="testimonial-slide">
+              <p class="testimonial-text">
+                "Professional, creative, and results-driven. JAFFSTUDIO helped us achieve
+                a 300% increase in online conversions. We couldn't be happier!"
+              </p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">
+                  <img src="images/client-3.jpg" alt="Emma Williams" loading="lazy">
+                </div>
+                <div class="testimonial-info">
+                  <h4>Emma Williams</h4>
+                  <p>Marketing Director, Fashion Co.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-indicators">
+          <span class="carousel-indicator active"></span>
+          <span class="carousel-indicator"></span>
+          <span class="carousel-indicator"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Logos -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">Trusted By Industry Leaders</h2>
+      </div>
+
+      <div class="client-logos">
+        <div class="client-logo fade-in">
+          <svg width="120" height="40" viewBox="0 0 120 40">
+            <rect width="120" height="40" fill="none" stroke="currentColor" stroke-width="2"/>
+            <text x="60" y="25" text-anchor="middle" fill="currentColor" font-size="14" font-family="var(--font-secondary)">CLIENT 1</text>
+          </svg>
+        </div>
+        <div class="client-logo fade-in">
+          <svg width="120" height="40" viewBox="0 0 120 40">
+            <rect width="120" height="40" fill="none" stroke="currentColor" stroke-width="2"/>
+            <text x="60" y="25" text-anchor="middle" fill="currentColor" font-size="14" font-family="var(--font-secondary)">CLIENT 2</text>
+          </svg>
+        </div>
+        <div class="client-logo fade-in">
+          <svg width="120" height="40" viewBox="0 0 120 40">
+            <rect width="120" height="40" fill="none" stroke="currentColor" stroke-width="2"/>
+            <text x="60" y="25" text-anchor="middle" fill="currentColor" font-size="14" font-family="var(--font-secondary)">CLIENT 3</text>
+          </svg>
+        </div>
+        <div class="client-logo fade-in">
+          <svg width="120" height="40" viewBox="0 0 120 40">
+            <rect width="120" height="40" fill="none" stroke="currentColor" stroke-width="2"/>
+            <text x="60" y="25" text-anchor="middle" fill="currentColor" font-size="14" font-family="var(--font-secondary)">CLIENT 4</text>
+          </svg>
+        </div>
+        <div class="client-logo fade-in">
+          <svg width="120" height="40" viewBox="0 0 120 40">
+            <rect width="120" height="40" fill="none" stroke="currentColor" stroke-width="2"/>
+            <text x="60" y="25" text-anchor="middle" fill="currentColor" font-size="14" font-family="var(--font-secondary)">CLIENT 5</text>
+          </svg>
+        </div>
+        <div class="client-logo fade-in">
+          <svg width="120" height="40" viewBox="0 0 120 40">
+            <rect width="120" height="40" fill="none" stroke="currentColor" stroke-width="2"/>
+            <text x="60" y="25" text-anchor="middle" fill="currentColor" font-size="14" font-family="var(--font-secondary)">CLIENT 6</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Preview -->
+  <section class="section" style="background: var(--color-gray-ultralight);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">Latest Insights</h2>
+        <p class="section-subtitle fade-in">
+          Stay updated with our thoughts on design, development, and digital trends
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="card fade-in">
+          <div class="card-image">
+            <img src="images/blog-1.jpg" alt="Blog Post 1" loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Design</span>
+              <span class="badge">UI/UX</span>
+            </div>
+            <h3 class="card-title">The Future of Minimalist Design</h3>
+            <p class="card-text">
+              Exploring how minimalism continues to shape modern web design
+              and user experience in 2024.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; color: var(--color-gray-medium);">
+              <span>March 15, 2024</span>
+              <a href="blog-detail.html" class="card-link">Read More</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card fade-in">
+          <div class="card-image">
+            <img src="images/blog-2.jpg" alt="Blog Post 2" loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Development</span>
+              <span class="badge">Tech</span>
+            </div>
+            <h3 class="card-title">Building Scalable Web Applications</h3>
+            <p class="card-text">
+              Best practices and modern approaches to creating applications
+              that grow with your business.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; color: var(--color-gray-medium);">
+              <span>March 10, 2024</span>
+              <a href="blog-detail.html" class="card-link">Read More</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card fade-in">
+          <div class="card-image">
+            <img src="images/blog-3.jpg" alt="Blog Post 3" loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Marketing</span>
+              <span class="badge">Strategy</span>
+            </div>
+            <h3 class="card-title">Digital Marketing in 2024</h3>
+            <p class="card-text">
+              Key strategies and trends that will define successful digital
+              marketing campaigns this year.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; color: var(--color-gray-medium);">
+              <span>March 5, 2024</span>
+              <a href="blog-detail.html" class="card-link">Read More</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="text-center mt-lg">
+        <a href="blog.html" class="btn btn-secondary">View All Posts</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">Stay Connected</h2>
+        <p class="section-subtitle fade-in">
+          Subscribe to our newsletter for updates, insights, and exclusive content
+        </p>
+      </div>
+
+      <form class="newsletter-form" data-validate>
+        <input
+          type="email"
+          class="form-input newsletter-input"
+          placeholder="Enter your email address"
+          required
+          aria-label="Email address"
+        >
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="section" style="background: var(--color-black); color: var(--color-white);">
+    <div class="container text-center">
+      <h2 class="section-title" style="color: var(--color-white);">Ready to Start Your Project?</h2>
+      <p class="section-subtitle" style="color: var(--color-gray-light); max-width: 700px; margin: 0 auto var(--spacing-md);">
+        Let's collaborate to bring your vision to life. Our team is ready to craft
+        exceptional digital solutions tailored to your unique needs.
+      </p>
+      <div style="display: flex; gap: var(--spacing-sm); justify-content: center; flex-wrap: wrap;">
+        <a href="contact.html" class="btn btn-white">Get in Touch</a>
+        <a href="portfolio.html" class="btn btn-secondary" style="color: var(--color-white); border-color: var(--color-white);">View Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>JAFFSTUDIO</h3>
+          <p style="color: var(--color-gray-light); margin-bottom: var(--spacing-sm);">
+            Crafting exceptional digital experiences through innovative design
+            and development.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Services</h3>
+          <div class="footer-links">
+            <a href="service-web-design.html" class="footer-link">Web Design</a>
+            <a href="service-web-development.html" class="footer-link">Web Development</a>
+            <a href="service-branding.html" class="footer-link">Branding</a>
+            <a href="service-digital-marketing.html" class="footer-link">Digital Marketing</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Company</h3>
+          <div class="footer-links">
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="portfolio.html" class="footer-link">Portfolio</a>
+            <a href="blog.html" class="footer-link">Blog</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <div class="footer-links">
+            <p style="color: var(--color-gray-light);">
+              <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>
+              hello@jaffstudio.com
+            </p>
+            <p style="color: var(--color-gray-light);">
+              <i class="fas fa-phone" style="margin-right: 0.5rem;"></i>
+              +1 (555) 123-4567
+            </p>
+            <p style="color: var(--color-gray-light);">
+              <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>
+              123 Design Street, Creative City
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 JAFFSTUDIO. All rights reserved. | <a href="privacy.html" class="footer-link">Privacy Policy</a> | <a href="terms.html" class="footer-link">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- WhatsApp Float Button -->
+  <a href="#" class="whatsapp-float" data-phone="15551234567" data-message="Hello! I'm interested in your services." aria-label="Contact via WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Cookie Consent -->
+  <div class="cookie-consent">
+    <div class="cookie-content">
+      <p class="cookie-text">
+        We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
+        <a href="privacy.html" style="color: var(--color-white); text-decoration: underline;">Learn more</a>
+      </p>
+      <div class="cookie-buttons">
+        <button class="btn btn-white btn-sm cookie-accept">Accept</button>
+        <button class="btn btn-secondary btn-sm cookie-decline" style="color: var(--color-white); border-color: var(--color-white);">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
