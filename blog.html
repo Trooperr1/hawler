@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JAFFSTUDIO Blog - Insights on design, development, and digital trends">
+  <title>Blog | JAFFSTUDIO</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    .search-bar {
+      max-width: 600px;
+      margin: 0 auto var(--spacing-lg);
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      padding: 1rem 3rem 1rem 1.5rem;
+      border: 2px solid var(--color-gray-light);
+      font-size: 1rem;
+      transition: var(--transition-fast);
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: var(--color-black);
+    }
+    .search-btn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      padding: 0 1.5rem;
+      background: var(--color-black);
+      color: var(--color-white);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+    .search-btn:hover {
+      background: var(--color-gray);
+    }
+    .featured-post {
+      grid-column: span 2;
+    }
+    @media (max-width: 968px) {
+      .featured-post {
+        grid-column: span 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loader-wrapper">
+    <div class="loader"></div>
+    <div class="loader-text">JAFFSTUDIO</div>
+  </div>
+
+  <div class="scroll-progress"></div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">JAFFSTUDIO</a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Services</a>
+          <ul class="dropdown-menu">
+            <li><a href="service-web-design.html" class="dropdown-link">Web Design</a></li>
+            <li><a href="service-web-development.html" class="dropdown-link">Web Development</a></li>
+            <li><a href="service-branding.html" class="dropdown-link">Branding</a></li>
+            <li><a href="service-digital-marketing.html" class="dropdown-link">Digital Marketing</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <div class="breadcrumbs">
+    <ul class="breadcrumb-list">
+      <li class="breadcrumb-item"><a href="index.html" class="breadcrumb-link">Home</a></li>
+      <li class="breadcrumb-item">Blog</li>
+    </ul>
+  </div>
+
+  <section class="section" style="padding-top: calc(80px + var(--spacing-md));">
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title fade-in">Our Blog</h1>
+        <p class="section-subtitle fade-in">
+          Insights, tutorials, and thoughts on design, development, and digital innovation
+        </p>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-bar fade-in">
+        <input type="text" class="search-input" placeholder="Search articles..." id="blogSearch">
+        <button class="search-btn" aria-label="Search">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+
+      <!-- Category Filters -->
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Posts</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+        <button class="filter-btn" data-filter="development">Development</button>
+        <button class="filter-btn" data-filter="marketing">Marketing</button>
+        <button class="filter-btn" data-filter="business">Business</button>
+        <button class="filter-btn" data-filter="tutorial">Tutorials</button>
+      </div>
+
+      <!-- Blog Grid -->
+      <div class="grid grid-3">
+        <!-- Featured Post -->
+        <article class="card featured-post fade-in" data-category="design" style="transition: var(--transition-smooth);">
+          <div class="card-image" style="aspect-ratio: 16/9;">
+            <img src="images/blog-featured.jpg" alt="Featured Post" loading="lazy">
+            <div style="position: absolute; top: 1rem; left: 1rem;">
+              <span class="badge" style="background: var(--color-black); color: var(--color-white); border: none;">Featured</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Design</span>
+              <span class="badge">UI/UX</span>
+            </div>
+            <h2 class="card-title">The Future of Minimalist Design in 2024</h2>
+            <p class="card-text">
+              Explore how minimalism continues to shape modern web design and user experience.
+              We dive deep into emerging trends, best practices, and what this means for your brand.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--spacing-sm);">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <img src="images/author-1.jpg" alt="Sarah Johnson" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                <div>
+                  <p style="margin: 0; font-weight: 500; font-size: 0.9rem;">Sarah Johnson</p>
+                  <p style="margin: 0; color: var(--color-gray-medium); font-size: 0.85rem;">March 15, 2024 · 8 min read</p>
+                </div>
+              </div>
+              <a href="blog-detail.html" class="card-link">Read More</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Regular Posts -->
+        <article class="card fade-in" data-category="development" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/blog-1.jpg" alt="Blog Post 1" loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Development</span>
+              <span class="badge">JavaScript</span>
+            </div>
+            <h3 class="card-title">Building Scalable Web Applications</h3>
+            <p class="card-text">
+              Best practices and modern approaches to creating applications that grow with your business.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; color: var(--color-gray-medium); margin-top: var(--spacing-sm);">
+              <span><i class="fas fa-user" style="margin-right: 0.25rem;"></i> Emma Williams</span>
+              <span>March 10, 2024</span>
+            </div>
+            <a href="blog-detail.html" class="card-link" style="margin-top: var(--spacing-sm); display: inline-block;">Read More</a>
+          </div>
+        </article>
+
+        <article class="card fade-in" data-category="marketing" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/blog-2.jpg" alt="Blog Post 2" loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Marketing</span>
+              <span class="badge">Strategy</span>
+            </div>
+            <h3 class="card-title">Digital Marketing Trends 2024</h3>
+            <p class="card-text">
+              Key strategies and trends that will define successful digital marketing campaigns this year.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; color: var(--color-gray-medium); margin-top: var(--spacing-sm);">
+              <span><i class="fas fa-user" style="margin-right: 0.25rem;"></i> David Rodriguez</span>
+              <span>March 5, 2024</span>
+            </div>
+            <a href="blog-detail.html" class="card-link" style="margin-top: var(--spacing-sm); display: inline-block;">Read More</a>
+          </div>
+        </article>
+
+        <article class="card fade-in" data-category="tutorial" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/blog-3.jpg" alt="Blog Post 3" loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Tutorial</span>
+              <span class="badge">CSS</span>
+            </div>
+            <h3 class="card-title">Advanced CSS Grid Techniques</h3>
+            <p class="card-text">
+              Master modern layout techniques with CSS Grid. Step-by-step guide to complex layouts.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; color: var(--color-gray-medium); margin-top: var(--spacing-sm);">
+              <span><i class="fas fa-user" style="margin-right: 0.25rem;"></i> Lisa Anderson</span>
+              <span>March 1, 2024</span>
+            </div>
+            <a href="blog-detail.html" class="card-link" style="margin-top: var(--spacing-sm); display: inline-block;">Read More</a>
+          </div>
+        </article>
+
+        <article class="card fade-in" data-category="business" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/blog-4.jpg" alt="Blog Post 4" loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Business</span>
+            </div>
+            <h3 class="card-title">ROI of Good Design</h3>
+            <p class="card-text">
+              How investing in quality design pays off. Real numbers and case studies from our clients.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; color: var(--color-gray-medium); margin-top: var(--spacing-sm);">
+              <span><i class="fas fa-user" style="margin-right: 0.25rem;"></i> Michael Chen</span>
+              <span>Feb 28, 2024</span>
+            </div>
+            <a href="blog-detail.html" class="card-link" style="margin-top: var(--spacing-sm); display: inline-block;">Read More</a>
+          </div>
+        </article>
+
+        <article class="card fade-in" data-category="design" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/blog-5.jpg" alt="Blog Post 5" loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Design</span>
+              <span class="badge">Branding</span>
+            </div>
+            <h3 class="card-title">Creating Memorable Brand Identities</h3>
+            <p class="card-text">
+              The essential elements of brand identity design that stand the test of time.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; color: var(--color-gray-medium); margin-top: var(--spacing-sm);">
+              <span><i class="fas fa-user" style="margin-right: 0.25rem;"></i> Sarah Johnson</span>
+              <span>Feb 25, 2024</span>
+            </div>
+            <a href="blog-detail.html" class="card-link" style="margin-top: var(--spacing-sm); display: inline-block;">Read More</a>
+          </div>
+        </article>
+
+        <article class="card fade-in" data-category="development" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/blog-6.jpg" alt="Blog Post 6" loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Development</span>
+              <span class="badge">Performance</span>
+            </div>
+            <h3 class="card-title">Website Performance Optimization</h3>
+            <p class="card-text">
+              Practical tips to make your website lightning fast and improve user experience.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; color: var(--color-gray-medium); margin-top: var(--spacing-sm);">
+              <span><i class="fas fa-user" style="margin-right: 0.25rem;"></i> Robert Taylor</span>
+              <span>Feb 20, 2024</span>
+            </div>
+            <a href="blog-detail.html" class="card-link" style="margin-top: var(--spacing-sm); display: inline-block;">Read More</a>
+          </div>
+        </article>
+
+        <article class="card fade-in" data-category="tutorial" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/blog-7.jpg" alt="Blog Post 7" loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Tutorial</span>
+              <span class="badge">React</span>
+            </div>
+            <h3 class="card-title">Getting Started with React Hooks</h3>
+            <p class="card-text">
+              A comprehensive guide to understanding and using React Hooks in your projects.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; color: var(--color-gray-medium); margin-top: var(--spacing-sm);">
+              <span><i class="fas fa-user" style="margin-right: 0.25rem;"></i> Emma Williams</span>
+              <span>Feb 15, 2024</span>
+            </div>
+            <a href="blog-detail.html" class="card-link" style="margin-top: var(--spacing-sm); display: inline-block;">Read More</a>
+          </div>
+        </article>
+
+        <article class="card fade-in" data-category="marketing" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/blog-8.jpg" alt="Blog Post 8" loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Marketing</span>
+              <span class="badge">SEO</span>
+            </div>
+            <h3 class="card-title">SEO Best Practices for 2024</h3>
+            <p class="card-text">
+              Latest SEO strategies to improve your search rankings and drive organic traffic.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; color: var(--color-gray-medium); margin-top: var(--spacing-sm);">
+              <span><i class="fas fa-user" style="margin-right: 0.25rem;"></i> Maria Garcia</span>
+              <span>Feb 10, 2024</span>
+            </div>
+            <a href="blog-detail.html" class="card-link" style="margin-top: var(--spacing-sm); display: inline-block;">Read More</a>
+          </div>
+        </article>
+
+        <article class="card fade-in" data-category="design" style="transition: var(--transition-smooth);">
+          <div class="card-image">
+            <img src="images/blog-9.jpg" alt="Blog Post 9" loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="mb-sm">
+              <span class="badge">Design</span>
+              <span class="badge">Typography</span>
+            </div>
+            <h3 class="card-title">Typography in Web Design</h3>
+            <p class="card-text">
+              The art and science of choosing and using fonts for maximum impact and readability.
+            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; color: var(--color-gray-medium); margin-top: var(--spacing-sm);">
+              <span><i class="fas fa-user" style="margin-right: 0.25rem;"></i> Lisa Anderson</span>
+              <span>Feb 5, 2024</span>
+            </div>
+            <a href="blog-detail.html" class="card-link" style="margin-top: var(--spacing-sm); display: inline-block;">Read More</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Pagination -->
+      <div style="display: flex; justify-content: center; gap: var(--spacing-sm); margin-top: var(--spacing-xl);">
+        <button class="btn btn-secondary" disabled>
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="btn btn-primary">1</button>
+        <button class="btn btn-secondary">2</button>
+        <button class="btn btn-secondary">3</button>
+        <button class="btn btn-secondary">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section" style="background: var(--color-gray-ultralight);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">Subscribe to Our Newsletter</h2>
+        <p class="section-subtitle fade-in">
+          Get the latest articles and insights delivered directly to your inbox
+        </p>
+      </div>
+
+      <form class="newsletter-form" data-validate>
+        <input
+          type="email"
+          class="form-input newsletter-input"
+          placeholder="Enter your email address"
+          required
+          aria-label="Email address"
+        >
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>JAFFSTUDIO</h3>
+          <p style="color: var(--color-gray-light); margin-bottom: var(--spacing-sm);">
+            Crafting exceptional digital experiences through innovative design and development.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Services</h3>
+          <div class="footer-links">
+            <a href="service-web-design.html" class="footer-link">Web Design</a>
+            <a href="service-web-development.html" class="footer-link">Web Development</a>
+            <a href="service-branding.html" class="footer-link">Branding</a>
+            <a href="service-digital-marketing.html" class="footer-link">Digital Marketing</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Company</h3>
+          <div class="footer-links">
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="portfolio.html" class="footer-link">Portfolio</a>
+            <a href="blog.html" class="footer-link">Blog</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <div class="footer-links">
+            <p style="color: var(--color-gray-light);"><i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>hello@jaffstudio.com</p>
+            <p style="color: var(--color-gray-light);"><i class="fas fa-phone" style="margin-right: 0.5rem;"></i><a href="tel:+15551234567" style="color: inherit;">+1 (555) 123-4567</a></p>
+            <p style="color: var(--color-gray-light);"><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>123 Design Street, Creative City</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 JAFFSTUDIO. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+  <a href="#" class="whatsapp-float" data-phone="15551234567" aria-label="Contact via WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <script src="js/main.js"></script>
+  <script src="js/placeholders.js"></script>
+  <script>
+    // Blog search functionality
+    document.getElementById('blogSearch').addEventListener('input', function(e) {
+      const searchTerm = e.target.value.toLowerCase();
+      const articles = document.querySelectorAll('[data-category]');
+
+      articles.forEach(article => {
+        const title = article.querySelector('.card-title').textContent.toLowerCase();
+        const text = article.querySelector('.card-text').textContent.toLowerCase();
+
+        if (title.includes(searchTerm) || text.includes(searchTerm)) {
+          article.style.display = 'block';
+          setTimeout(() => {
+            article.style.opacity = '1';
+            article.style.transform = 'scale(1)';
+          }, 10);
+        } else {
+          article.style.opacity = '0';
+          article.style.transform = 'scale(0.8)';
+          setTimeout(() => {
+            article.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

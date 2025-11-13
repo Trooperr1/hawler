@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive Tools Demo - JAFFSTUDIO">
+  <title>Interactive Tools | JAFFSTUDIO</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/interactive-tools.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="loader-wrapper">
+    <div class="loader"></div>
+    <div class="loader-text">JAFFSTUDIO</div>
+  </div>
+
+  <div class="scroll-progress"></div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">JAFFSTUDIO</a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Services</a>
+          <ul class="dropdown-menu">
+            <li><a href="service-web-design.html" class="dropdown-link">Web Design</a></li>
+            <li><a href="service-web-development.html" class="dropdown-link">Web Development</a></li>
+            <li><a href="service-branding.html" class="dropdown-link">Branding</a></li>
+            <li><a href="service-digital-marketing.html" class="dropdown-link">Digital Marketing</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <div class="breadcrumbs">
+    <ul class="breadcrumb-list">
+      <li class="breadcrumb-item"><a href="index.html" class="breadcrumb-link">Home</a></li>
+      <li class="breadcrumb-item">Interactive Tools Demo</li>
+    </ul>
+  </div>
+
+  <section class="section" style="padding-top: calc(80px + var(--spacing-md));">
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title fade-in">Interactive Tools</h1>
+        <p class="section-subtitle fade-in">
+          Explore our advanced interactive features and tools
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI Calculator -->
+  <section class="section" id="roi-calculator" style="background: var(--color-gray-ultralight);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">ROI Calculator</h2>
+        <p class="section-subtitle fade-in">
+          Calculate your return on investment
+        </p>
+      </div>
+
+      <div class="roi-calculator card" style="padding: var(--spacing-lg);" data-roi-calculator>
+        <div class="calculator-inputs">
+          <div class="form-group">
+            <label class="form-label">Initial Investment ($)</label>
+            <input type="number" class="form-input" data-investment value="10000" min="0">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Expected Revenue ($)</label>
+            <input type="number" class="form-input" data-revenue value="25000" min="0">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Timeframe (months)</label>
+            <select class="form-select" data-timeframe>
+              <option value="3">3 months</option>
+              <option value="6">6 months</option>
+              <option value="12" selected>12 months</option>
+              <option value="24">24 months</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calculator-result">
+          <p style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Your ROI</p>
+          <div class="roi-value">150%</div>
+
+          <div class="roi-breakdown">
+            <div class="roi-item">
+              <div class="roi-item-value" data-total-gain>$15,000</div>
+              <div class="roi-item-label">Total Gain</div>
+            </div>
+            <div class="roi-item">
+              <div class="roi-item-value" data-monthly-roi>$1,250</div>
+              <div class="roi-item-label">Monthly ROI</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Comparison Tool -->
+  <section class="section" id="comparison">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">Service Comparison</h2>
+        <p class="section-subtitle fade-in">
+          Compare our service packages side by side
+        </p>
+      </div>
+
+      <div class="comparison-table">
+        <div class="comparison-grid">
+          <div class="comparison-cell header">Features</div>
+          <div class="comparison-cell header">Starter</div>
+          <div class="comparison-cell header">Professional</div>
+          <div class="comparison-cell header">Enterprise</div>
+
+          <div class="comparison-cell label">Pages Included</div>
+          <div class="comparison-cell">Up to 5</div>
+          <div class="comparison-cell">Up to 15</div>
+          <div class="comparison-cell">Unlimited</div>
+
+          <div class="comparison-cell label">Custom Design</div>
+          <div class="comparison-cell"><i class="fas fa-check check"></i></div>
+          <div class="comparison-cell"><i class="fas fa-check check"></i></div>
+          <div class="comparison-cell"><i class="fas fa-check check"></i></div>
+
+          <div class="comparison-cell label">Responsive</div>
+          <div class="comparison-cell"><i class="fas fa-check check"></i></div>
+          <div class="comparison-cell"><i class="fas fa-check check"></i></div>
+          <div class="comparison-cell"><i class="fas fa-check check"></i></div>
+
+          <div class="comparison-cell label">SEO Optimization</div>
+          <div class="comparison-cell">Basic</div>
+          <div class="comparison-cell">Advanced</div>
+          <div class="comparison-cell">Premium</div>
+
+          <div class="comparison-cell label">CMS Integration</div>
+          <div class="comparison-cell"><i class="fas fa-times times"></i></div>
+          <div class="comparison-cell"><i class="fas fa-check check"></i></div>
+          <div class="comparison-cell"><i class="fas fa-check check"></i></div>
+
+          <div class="comparison-cell label">E-commerce</div>
+          <div class="comparison-cell"><i class="fas fa-times times"></i></div>
+          <div class="comparison-cell"><i class="fas fa-times times"></i></div>
+          <div class="comparison-cell"><i class="fas fa-check check"></i></div>
+
+          <div class="comparison-cell label">Custom Animations</div>
+          <div class="comparison-cell"><i class="fas fa-times times"></i></div>
+          <div class="comparison-cell"><i class="fas fa-check check"></i></div>
+          <div class="comparison-cell"><i class="fas fa-check check"></i></div>
+
+          <div class="comparison-cell label">Support Period</div>
+          <div class="comparison-cell">30 Days</div>
+          <div class="comparison-cell">90 Days</div>
+          <div class="comparison-cell">1 Year</div>
+
+          <div class="comparison-cell label">Priority Support</div>
+          <div class="comparison-cell"><i class="fas fa-times times"></i></div>
+          <div class="comparison-cell"><i class="fas fa-times times"></i></div>
+          <div class="comparison-cell"><i class="fas fa-check check"></i></div>
+
+          <div class="comparison-cell header">$2,500</div>
+          <div class="comparison-cell header">$5,000</div>
+          <div class="comparison-cell header">$10,000+</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Multi-Step Form -->
+  <section class="section" id="multistep-form" style="background: var(--color-gray-ultralight);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">Multi-Step Lead Form</h2>
+        <p class="section-subtitle fade-in">
+          Tell us about your project step by step
+        </p>
+      </div>
+
+      <div class="card multistep-form" style="padding: var(--spacing-lg);">
+        <form data-multistep-form data-validate>
+          <!-- Progress Indicators -->
+          <div class="form-progress">
+            <div class="progress-line" style="width: 0%;"></div>
+
+            <div class="form-step-indicator active">
+              <div class="step-circle">1</div>
+              <div class="step-label">Contact Info</div>
+            </div>
+
+            <div class="form-step-indicator">
+              <div class="step-circle">2</div>
+              <div class="step-label">Project Details</div>
+            </div>
+
+            <div class="form-step-indicator">
+              <div class="step-circle">3</div>
+              <div class="step-label">Budget & Timeline</div>
+            </div>
+
+            <div class="form-step-indicator">
+              <div class="step-circle">4</div>
+              <div class="step-label">Review</div>
+            </div>
+          </div>
+
+          <!-- Step 1: Contact Info -->
+          <div class="form-step-content active">
+            <h3 style="margin-bottom: var(--spacing-md);">Step 1: Your Information</h3>
+
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label class="form-label">First Name *</label>
+                <input type="text" class="form-input" required>
+                <span class="form-error">Please enter your first name</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Last Name *</label>
+                <input type="text" class="form-input" required>
+                <span class="form-error">Please enter your last name</span>
+              </div>
+            </div>
+
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label class="form-label">Email *</label>
+                <input type="email" class="form-input" required>
+                <span class="form-error">Please enter a valid email</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Phone</label>
+                <input type="tel" class="form-input">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Company Name</label>
+              <input type="text" class="form-input">
+            </div>
+          </div>
+
+          <!-- Step 2: Project Details -->
+          <div class="form-step-content">
+            <h3 style="margin-bottom: var(--spacing-md);">Step 2: Project Details</h3>
+
+            <div class="form-group">
+              <label class="form-label">Service Needed *</label>
+              <select class="form-select" required>
+                <option value="">Select a service</option>
+                <option>Web Design</option>
+                <option>Web Development</option>
+                <option>Branding</option>
+                <option>Digital Marketing</option>
+                <option>Multiple Services</option>
+              </select>
+              <span class="form-error">Please select a service</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Project Description *</label>
+              <textarea class="form-textarea" required minlength="50" placeholder="Tell us about your project..."></textarea>
+              <span class="form-error">Please provide details (minimum 50 characters)</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Website URL (if updating existing site)</label>
+              <input type="url" class="form-input" placeholder="https://">
+            </div>
+          </div>
+
+          <!-- Step 3: Budget & Timeline -->
+          <div class="form-step-content">
+            <h3 style="margin-bottom: var(--spacing-md);">Step 3: Budget & Timeline</h3>
+
+            <div class="form-group">
+              <label class="form-label">Budget Range *</label>
+              <select class="form-select" required>
+                <option value="">Select budget range</option>
+                <option>Under $5,000</option>
+                <option>$5,000 - $10,000</option>
+                <option>$10,000 - $25,000</option>
+                <option>$25,000 - $50,000</option>
+                <option>$50,000+</option>
+              </select>
+              <span class="form-error">Please select your budget range</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Preferred Timeline *</label>
+              <select class="form-select" required>
+                <option value="">Select timeline</option>
+                <option>ASAP (1-2 weeks)</option>
+                <option>1 month</option>
+                <option>2-3 months</option>
+                <option>3+ months</option>
+                <option>Flexible</option>
+              </select>
+              <span class="form-error">Please select a timeline</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">How did you hear about us?</label>
+              <select class="form-select">
+                <option>Google Search</option>
+                <option>Social Media</option>
+                <option>Referral</option>
+                <option>Advertisement</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Step 4: Review -->
+          <div class="form-step-content">
+            <h3 style="margin-bottom: var(--spacing-md);">Step 4: Review & Submit</h3>
+            <p style="color: var(--color-gray-medium); margin-bottom: var(--spacing-md);">
+              Please review your information before submitting. We'll get back to you within 24 hours.
+            </p>
+
+            <div class="card" style="background: var(--color-gray-ultralight); padding: var(--spacing-md); margin-bottom: var(--spacing-md);">
+              <p style="margin: 0; font-size: 0.9rem; color: var(--color-gray);">
+                <i class="fas fa-info-circle"></i> Your information is secure and will never be shared with third parties.
+              </p>
+            </div>
+
+            <div class="form-group">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="agree" required>
+                <label for="agree">I agree to the <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a></label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="form-navigation">
+            <button type="button" class="btn btn-secondary" data-prev style="display: none;">
+              <i class="fas fa-arrow-left"></i> Previous
+            </button>
+            <button type="button" class="btn btn-primary" data-next>
+              Next <i class="fas fa-arrow-right"></i>
+            </button>
+            <button type="submit" class="btn btn-primary" style="display: none;">
+              Submit <i class="fas fa-check"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- File Upload Demo -->
+  <section class="section" id="file-upload">
+    <div class="container" style="max-width: 700px;">
+      <div class="section-header">
+        <h2 class="section-title fade-in">File Upload</h2>
+        <p class="section-subtitle fade-in">
+          Drag and drop or click to upload files
+        </p>
+      </div>
+
+      <div class="card" style="padding: var(--spacing-lg);">
+        <div class="file-upload-area">
+          <input type="file" class="file-upload-input" multiple accept=".pdf,.doc,.docx,.jpg,.png,.zip">
+          <div class="file-upload-icon">
+            <i class="fas fa-cloud-upload-alt"></i>
+          </div>
+          <p style="margin: 0; font-weight: 500;">Drop files here or click to browse</p>
+          <p style="margin: 0.5rem 0 0 0; font-size: 0.85rem; color: var(--color-gray-medium);">
+            Supported: PDF, DOC, DOCX, JPG, PNG, ZIP (Max 10MB)
+          </p>
+        </div>
+
+        <div class="file-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background: var(--color-black); color: var(--color-white);">
+    <div class="container text-center">
+      <h2 class="section-title" style="color: var(--color-white);">Ready to Get Started?</h2>
+      <p class="section-subtitle" style="color: var(--color-gray-light); max-width: 700px; margin: 0 auto var(--spacing-md);">
+        Let's work together to bring your vision to life
+      </p>
+      <a href="contact.html" class="btn btn-white">Contact Us Today</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>JAFFSTUDIO</h3>
+          <p style="color: var(--color-gray-light); margin-bottom: var(--spacing-sm);">
+            Crafting exceptional digital experiences through innovative design and development.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Services</h3>
+          <div class="footer-links">
+            <a href="service-web-design.html" class="footer-link">Web Design</a>
+            <a href="service-web-development.html" class="footer-link">Web Development</a>
+            <a href="service-branding.html" class="footer-link">Branding</a>
+            <a href="service-digital-marketing.html" class="footer-link">Digital Marketing</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Company</h3>
+          <div class="footer-links">
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="portfolio.html" class="footer-link">Portfolio</a>
+            <a href="blog.html" class="footer-link">Blog</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <div class="footer-links">
+            <p style="color: var(--color-gray-light);"><i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>hello@jaffstudio.com</p>
+            <p style="color: var(--color-gray-light);"><i class="fas fa-phone" style="margin-right: 0.5rem;"></i><a href="tel:+15551234567" style="color: inherit;">+1 (555) 123-4567</a></p>
+            <p style="color: var(--color-gray-light);"><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>123 Design Street, Creative City</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 JAFFSTUDIO. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+  <a href="#" class="whatsapp-float" data-phone="15551234567" aria-label="Contact via WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <script src="js/main.js"></script>
+  <script src="js/interactive-tools.js"></script>
+  <script src="js/placeholders.js"></script>
+</body>
+</html>
