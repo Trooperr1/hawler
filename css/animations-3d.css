@@ -1,0 +1,460 @@
+/* JAFFSTUDIO - Professional 3D Background Animations */
+
+/* === Animated Background Container === */
+.hero,
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* === Particle System === */
+.particles-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  animation: float-particle linear infinite;
+}
+
+/* Varying particle sizes */
+.particle.small {
+  width: 4px;
+  height: 4px;
+}
+
+.particle.medium {
+  width: 8px;
+  height: 8px;
+}
+
+.particle.large {
+  width: 12px;
+  height: 12px;
+}
+
+@keyframes float-particle {
+  0% {
+    transform: translateY(100vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* === Geometric 3D Shapes === */
+.geometric-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.geometric-shape {
+  position: absolute;
+  opacity: 0.03;
+  animation: rotate3d 20s linear infinite;
+}
+
+.shape-cube {
+  width: 200px;
+  height: 200px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  transform-style: preserve-3d;
+}
+
+.shape-circle {
+  width: 150px;
+  height: 150px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+.shape-triangle {
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 173px solid rgba(0, 0, 0, 0.05);
+}
+
+@keyframes rotate3d {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+/* === Gradient Mesh Animation === */
+.gradient-mesh {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(0, 0, 0, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(0, 0, 0, 0.02) 0%, transparent 50%);
+  animation: mesh-move 15s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes mesh-move {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(5%, 5%) rotate(120deg);
+  }
+  66% {
+    transform: translate(-5%, 3%) rotate(240deg);
+  }
+}
+
+/* === Floating Orbs === */
+.floating-orbs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.1));
+  filter: blur(40px);
+  opacity: 0.15;
+  animation: float-orb ease-in-out infinite;
+}
+
+.orb-1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 10%;
+  animation-duration: 20s;
+}
+
+.orb-2 {
+  width: 200px;
+  height: 200px;
+  top: 60%;
+  right: 10%;
+  animation-duration: 25s;
+  animation-delay: -5s;
+}
+
+.orb-3 {
+  width: 250px;
+  height: 250px;
+  bottom: 20%;
+  left: 50%;
+  animation-duration: 30s;
+  animation-delay: -10s;
+}
+
+@keyframes float-orb {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+/* === Wave Animation === */
+.wave-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.02) 0%, transparent 100%);
+  animation: wave-move 10s linear infinite;
+}
+
+.wave:nth-child(2) {
+  animation-duration: 15s;
+  animation-delay: -5s;
+  opacity: 0.5;
+}
+
+.wave:nth-child(3) {
+  animation-duration: 20s;
+  animation-delay: -10s;
+  opacity: 0.3;
+}
+
+@keyframes wave-move {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* === Grid Lines 3D === */
+.grid-3d {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform: perspective(500px) rotateX(60deg);
+  transform-origin: center center;
+  animation: grid-pulse 4s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes grid-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: perspective(500px) rotateX(60deg) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: perspective(500px) rotateX(60deg) scale(1.05);
+  }
+}
+
+/* === Parallax Layers === */
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.parallax-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.parallax-layer-1 {
+  transform: translateZ(-100px) scale(2);
+}
+
+.parallax-layer-2 {
+  transform: translateZ(-200px) scale(3);
+  background-size: 60px 60px;
+  opacity: 0.5;
+}
+
+/* === Noise Texture === */
+.noise-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  z-index: 0;
+  pointer-events: none;
+  animation: noise-move 8s steps(10) infinite;
+}
+
+@keyframes noise-move {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -5%); }
+  20% { transform: translate(-10%, 5%); }
+  30% { transform: translate(5%, -10%); }
+  40% { transform: translate(-5%, 15%); }
+  50% { transform: translate(-10%, 5%); }
+  60% { transform: translate(15%, 0); }
+  70% { transform: translate(0, 10%); }
+  80% { transform: translate(-15%, 0); }
+  90% { transform: translate(10%, 5%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* === Spotlight Effect === */
+.spotlight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+/* === Scanline Effect === */
+.scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 0, 0, 0.02) 51%
+  );
+  background-size: 100% 4px;
+  animation: scanline-move 8s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+@keyframes scanline-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+/* === Glowing Dots === */
+.dot-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: dot-glow 3s ease-in-out infinite alternate;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes dot-glow {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+/* === Ensure Content is Above Backgrounds === */
+.hero-content,
+.section > .container,
+.card-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* === Performance Optimizations === */
+.particles-bg,
+.geometric-bg,
+.floating-orbs,
+.wave-bg,
+.parallax-bg {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* === Reduced Motion Support === */
+@media (prefers-reduced-motion: reduce) {
+  .particle,
+  .geometric-shape,
+  .gradient-mesh,
+  .orb,
+  .wave,
+  .grid-3d,
+  .noise-bg,
+  .scanlines,
+  .dot-grid {
+    animation: none !important;
+  }
+
+  .spotlight {
+    display: none;
+  }
+}
+
+/* === Mobile Optimizations === */
+@media (max-width: 768px) {
+  /* Reduce particle count and complexity on mobile */
+  .particle.large,
+  .orb-3,
+  .geometric-shape,
+  .parallax-layer-2 {
+    display: none;
+  }
+
+  .gradient-mesh,
+  .floating-orbs,
+  .noise-bg {
+    opacity: 0.5;
+  }
+}
+
+/* === Dark Mode Variations (if needed later) === */
+@media (prefers-color-scheme: dark) {
+  .particle {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .geometric-shape {
+    opacity: 0.1;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .orb {
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  }
+}
